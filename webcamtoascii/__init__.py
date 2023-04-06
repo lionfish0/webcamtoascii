@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+import time
 def ascii_draw(mat):
     symbols = np.array([s for s in ' .,:-=+*X#@@'])#[::-1]
     msg = ""
@@ -26,6 +26,7 @@ def run():
 
         #print(ascii_draw(np.mean(frame[::9,::7],2)))
         print(ascii_draw(resized_frame))
+        time.sleep(0.02)
 
         key = cv2.waitKey(1)
         if key == 27:
